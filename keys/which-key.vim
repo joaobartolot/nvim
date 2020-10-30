@@ -1,5 +1,7 @@
 " Leader Key Maps
 
+let @s = 'veS"'
+
 " Map leader to which_key
 nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
@@ -18,10 +20,6 @@ let g:which_key_map['?'] = 'search word'
 let g:which_key_use_floating_win = 0
 
 " Change the colors if you want
-highlight default link WhichKey          Operator
-highlight default link WhichKeySeperator DiffAdded
-highlight default link WhichKeyGroup     Identifier
-highlight default link WhichKeyDesc      Function
 
 " Hide status line
 autocmd! FileType which_key
@@ -54,13 +52,14 @@ let g:which_key_map.a = {
       \ 'name' : '+actions' ,
       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
       \ 'e' : [':CocCommand explorer'    , 'explorer'],
+      \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
       \ 'l' : [':Bracey'                 , 'start live server'],
       \ 'L' : [':BraceyStop'             , 'stop live server'],
       \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
       \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
+      \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ 's' : [':let @/ = ""'            , 'remove search highlight'],
       \ 't' : [':FloatermToggle'         , 'terminal'],
       \ 'v' : [':Codi'                   , 'virtual repl on'],
       \ 'V' : [':Codi!'                  , 'virtual repl off'],
@@ -70,15 +69,27 @@ let g:which_key_map.a = {
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffer' ,
-      \ '1' : ['b1'        , 'buffer 1'],
-      \ '2' : ['b2'        , 'buffer 2'],
-      \ 'd' : [':Bdelete'  , 'delete-buffer'],
-      \ 'f' : ['bfirst'    , 'first-buffer'],
-      \ 'h' : ['Startify'  , 'home-buffer'],
-      \ 'l' : ['blast'     , 'last-buffer'],
-      \ 'n' : ['bnext'     , 'next-buffer'],
-      \ 'p' : ['bprevious' , 'previous-buffer'],
-      \ '?' : ['Buffers'   , 'fzf-buffer'],
+      \ '>' : [':BufferMoveNext'        , 'move next'],
+      \ '<' : [':BufferMovePrevious'    , 'move prev'],
+      \ '1' : [':BufferGoto 1'          , 'buffer 1'],
+      \ '2' : [':BufferGoto 2'          , 'buffer 2'],
+      \ '3' : [':BufferGoto 3'          , 'buffer 3'],
+      \ '4' : [':BufferGoto 4'          , 'buffer 4'],
+      \ '5' : [':BufferGoto 5'          , 'buffer 5'],
+      \ '6' : [':BufferGoto 6'          , 'buffer 6'],
+      \ '7' : [':BufferGoto 7'          , 'buffer 7'],
+      \ '8' : [':BufferGoto 8'          , 'buffer 8'],
+      \ '9' : [':BufferGoto 9'          , 'buffer 9'],
+      \ '0' : [':BufferGoto 0'          , 'buffer 0'],
+      \ 'b' : [':BufferPick'            , 'pick buffer'],
+      \ 'd' : [':Bdelete'               , 'delete-buffer'],
+      \ 'D' : [':BufferOrderByDirectory', 'order by directory'],
+      \ 'f' : ['bfirst'                 , 'first-buffer'],
+      \ 'l' : ['blast'                  , 'last buffer'],
+      \ 'L' : [':BufferOrderByLanguage' , 'order by language'],
+      \ 'n' : ['bnext'                  , 'next-buffer'],
+      \ 'p' : ['bprevious'              , 'previous-buffer'],
+      \ '?' : ['Buffers'                , 'fzf-buffer'],
       \ }
 
 " f is for find and replace

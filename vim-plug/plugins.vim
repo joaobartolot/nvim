@@ -25,12 +25,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   if exists('g:vscode')
     " Easy motion for VSCode
-    Plug 'asvetliakov/vim-easymotion'
+    " Plug 'asvetliakov/vim-easymotion'
+    Plug 'ChristianChiarulli/vscode-easymotion'
     Plug 'machakann/vim-highlightedyank'
   else
 
+
+    " Debug
+    " Plug 'mfussenegger/nvim-dap'
+    " Plug 'nvim-dap-virtual-text'
     " Sneak
-    Plug 'justinmk/vim-sneak'
+    " Plug 'justinmk/vim-sneak'
+    " Easymotion
+    Plug 'easymotion/vim-easymotion'
     " Surround
     Plug 'tpope/vim-surround'
     " Files
@@ -40,22 +47,29 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " auto set indent settings
     Plug 'tpope/vim-sleuth'
     " Better Syntax Support
-    " Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'sheerun/vim-polyglot'
+    " Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-treesitter/nvim-treesitter-refactor'
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'nvim-treesitter/playground'
+    Plug 'romgrk/nvim-treesitter-context'
+    " Minimap
+    " Plug 'wfxr/minimap.vim'
     " Cool Icons
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'ryanoasis/vim-devicons'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Closetags
     Plug 'alvan/vim-closetag'
     " Themes
-    Plug 'christianchiarulli/nvcode.vim'
-    " Plug 'ChristianChiarulli/nv-code'
-    " Plug 'kyazdani42/blue-moon'
+    Plug 'christianchiarulli/nvcode-color-schemes.vim'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
-    Plug 'vim-airline/vim-airline'
+    Plug 'glepnir/galaxyline.nvim'
+    " Plug 'vim-airline/vim-airline'
     Plug 'kevinhwang91/rnvimr'
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -81,10 +95,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/emmet-vim'
     " Interactive code
     Plug 'metakirby5/codi.vim'
-    " Debugging
-    " Plug 'puremourning/vimspector'
     " Better tabline
-    Plug 'mg979/vim-xtabline'
+    Plug 'romgrk/lib.kom'
+    Plug 'romgrk/barbar.nvim'
     " undo time travel
     Plug 'mbbill/undotree'
     " Find and replace
@@ -132,6 +145,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'kaicataldo/material.vim'
     " Plug 'NLKNguyen/papercolor-theme'
     " Plug 'tomasiser/vim-code-dark'
+    " Plug 'mg979/vim-xtabline'
     " Vim Wiki
     " Plug 'https://github.com/vimwiki/vimwiki.git'
     " Better Comments
@@ -148,7 +162,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Making stuff
     " Plug 'neomake/neomake'
     " Plug 'mhinz/vim-signify'
-    " Plug 'easymotion/vim-easymotion'
     " Plug 'preservim/nerdcommenter'
     " Plug 'brooth/far.vim'
     " Plug 'atishay/far.vim'
