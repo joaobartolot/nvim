@@ -165,6 +165,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'preservim/nerdcommenter'
     " Plug 'brooth/far.vim'
     " Plug 'atishay/far.vim'
+    " Debugging
+    " Plug 'puremourning/vimspector'
   endif
 
 call plug#end()
