@@ -152,6 +152,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'preservim/nerdcommenter'
     " Plug 'brooth/far.vim'
     " Plug 'atishay/far.vim'
+
+    " Themes
+    Plug 'rakr/vim-one'
   endif
 
 call plug#end()
